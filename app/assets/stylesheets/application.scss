@@ -1,0 +1,35 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+.banner {
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.card {
+  height: 200px;
+  margin: 24px;
+  // background-color: red;
+  .card-img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  p {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,49 @@
+
+<div class="banner w-100 d-flex justify-content-center align-items-center" style="background-image: url(<%= @garden.banner_url %>);">
+  <h1 class="text-white"> <%= @garden.name %> </h1>
+
+</div>
+
+<div class="row">
+
+  <% @garden.plants.each do |plant| %>
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-img d-flex justify-content-center align-items-center" style="background-image: url( <%= plant.image_url %> )">
+          <p class="text-white text-lg"> <%= plant.name %> </p>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+
+</div>
+
+<div class="row justify-content-center">
+
+  <div class="col-6">
+
+    <div class="border rounded p-4">
+
+      <h1>Add a plant:</h1>
+
+
+      <%= simple_form_for [@garden, @plant] do |f| %>
+
+        <%= f.input :name %>
+        <%= f.input :image_url %>
+
+        <%= f.submit %>
+
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<%= link_to "Add a plant", new_garden_plant_path(@garden)  %>
+
+<%= link_to 'Edit', edit_garden_path(@garden) %> |
+<%= link_to 'Back', gardens_path %>
